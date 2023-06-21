@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <th:block th:replace="index :: head-properties"></th:block>
     <title>Songs</title>
 </head>
 <body>
-<ul>
-    <li th:text="${songs}"></li>
-</ul>
+<<nav th:replace="index :: navbar"></nav>
+<main>
+    <h1>Best Songs</h1>
+    <ul>
+        <!--    ciclo questa volta direttamente nel template con th:each poi per ogni li creato inserisco un a tag che rimanda alla pagina di dettaglio della canzone cliccata usando l'id come parametro da inserire direttamente nell'url-->
+
+        <li  th:each="songs : ${songs}">
+            <a th:href="@{|/songs/${songs.getId()}|}">[[${songs.getTitle()}]]</a>
+        </li>
+    </ul>
+</main>
 </body>
 </html>
+
