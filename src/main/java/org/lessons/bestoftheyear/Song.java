@@ -1,6 +1,6 @@
 package org.lessons.bestoftheyear;
 
-public class Songs {
+public class Song {
     //Attributi
     private int id;
     private String title;
@@ -8,7 +8,7 @@ public class Songs {
 //Costruttore
 
 
-    public Songs(int id, String title) {
+    public Song(int id, String title) {
         this.id = id;
         this.title = title;
     }

@@ -20,28 +20,28 @@ public class IndexController {
     }
 //    ho creato le due GetMapping che si indirizzano ai due template
 
-    //ho visogno di iterare la lista e passare sotto forma di stringa il risultato che esce dal ciclo quindi definisco attributomovie e attributosong ed inserisco ogni movie e ogni song che esce dal ciclo
+    //ho bisogno di iterare la lista e passare sotto forma di stringa il risultato che esce dal ciclo quindi definisco attributomovie e attributosong ed inserisco ogni movie e ogni song che esce dal ciclo
     @GetMapping("/movies")
     public String movies(Model model) {
         List<Movie> movieList = getBestMovie();
-        String attrMovieTemplate = "";
+        String attributeMovie = "";
         for (Movie movie:movieList) {
-            attrMovieTemplate += "id del film " + movie.getId() + ", " + "nome del film: " + movie.getTitle() + "||||| ";
+            attributeMovie += "id del film " + movie.getId() + ", " + "nome del film: " + movie.getTitle() + "||||| ";
         }
 
-        model.addAttribute("movies",attrMovieTemplate);
+        model.addAttribute("movies",attributeMovie);
         return "movies";
     }
 
     @GetMapping("/songs")
     public String songs(Model model) {
-        List<Songs> songsList = getBestSongs();
-        String attrSongsTemplate = "";
-        for (Songs songs:songsList) {
-            attrSongsTemplate += "id del film " + songs.getId() + ", " + "nome del film: " + songs.getTitle() + "||||| ";
+        List<Song> songsList = getBestSongs();
+        String attributeSongs = "";
+        for (Song songs:songsList) {
+            attributeSongs += "id del film " + songs.getId() + ", " + "nome del film: " + songs.getTitle() + "||||| ";
         }
 
-        model.addAttribute("songs",attrSongsTemplate);
+        model.addAttribute("songs",attributeSongs);
         return "songs";
     }
 
@@ -58,15 +58,15 @@ public class IndexController {
         return bestMovies;
     }
 
-    private List<Songs> getBestSongs(){
-        List<Songs> bestSong = new ArrayList<>();
+    private List<Song> getBestSongs(){
+        List<Song> bestSong = new ArrayList<>();
         //        per ogni bestSong addo in lista con id e titolo
-        bestSong.add(new Songs(1,"Otherside"));
-        bestSong.add(new Songs(2,"Viva la vida"));
-        bestSong.add(new Songs(3,"Wonderwall"));
-        bestSong.add(new Songs(4,"Miss You"));
-        bestSong.add(new Songs(5,"American Idiot"));
-        bestSong.add(new Songs(6,"Toxicity"));
+        bestSong.add(new Song(1,"Otherside"));
+        bestSong.add(new Song(2,"Viva la vida"));
+        bestSong.add(new Song(3,"Wonderwall"));
+        bestSong.add(new Song(4,"Miss You"));
+        bestSong.add(new Song(5,"American Idiot"));
+        bestSong.add(new Song(6,"Toxicity"));
         return bestSong;
     }
 

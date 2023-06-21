@@ -5,9 +5,14 @@
     <title>Movies</title>
 </head>
 <body>
-<ul>
-    <li th:text="${movies}"></li>
-</ul>
+
+<nav th:replace="fragments :: navbar"></nav>
+<main>
+
+    <ul>
+        <li th:text="${movies}"></li>
+    </ul>
+</main>
 
 
 </body>
