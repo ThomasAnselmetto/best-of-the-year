@@ -1,6 +1,5 @@
 package org.lessons.bestoftheyear.controller;
 
-import org.lessons.bestoftheyear.model.Movie;
 import org.lessons.bestoftheyear.model.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,46 +22,9 @@ public class IndexController {
 //    ho creato le due GetMapping che si indirizzano ai due template
 
     //ho bisogno di iterare la lista e passare sotto forma di stringa il risultato che esce dal ciclo quindi definisco attributomovie e attributosong ed inserisco ogni movie e ogni song che esce dal ciclo
-    @GetMapping("/movies")
-    public String movies(Model model) {
-        List<Movie> movieList = getBestMovie();
 
-        model.addAttribute("movies",movieList);
-        return "movies";
-    }
 
-    @GetMapping("/songs")
-    public String songs(Model model) {
-        List<Song> songsList = getBestSongs();
 
-        model.addAttribute("songs",songsList);
-        return "songs";
-    }
-
-//    creo i metodi privati per la restituizione dei film e le canzoni
-
-    private List<Movie> getBestMovie(){
-        List<Movie> bestMovies = new ArrayList<>();
-//        per ogni bestMovie addo in lista con id e titolo
-        bestMovies.add(new Movie(1,"Rocky 1"));
-        bestMovies.add(new Movie(2,"Rocky 2"));
-        bestMovies.add(new Movie(3,"Rocky 3"));
-        bestMovies.add(new Movie(4,"Rocky 4"));
-        bestMovies.add(new Movie(5,"Rambo 1"));
-        return bestMovies;
-    }
-
-    private List<Song> getBestSongs(){
-        List<Song> bestSong = new ArrayList<>();
-        //        per ogni bestSong addo in lista con id e titolo
-        bestSong.add(new Song(1,"Otherside"));
-        bestSong.add(new Song(2,"Viva la vida"));
-        bestSong.add(new Song(3,"Wonderwall"));
-        bestSong.add(new Song(4,"Miss You"));
-        bestSong.add(new Song(5,"American Idiot"));
-        bestSong.add(new Song(6,"Toxicity"));
-        return bestSong;
-    }
 
 
 

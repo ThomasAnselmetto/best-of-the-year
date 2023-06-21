@@ -11,7 +11,7 @@
     <ul>
         <!--    ciclo questa volta direttamente nel template con th:each poi per ogni li creato inserisco un a tag che rimanda alla pagina di dettaglio della canzone cliccata usando l'id come parametro da inserire direttamente nell'url-->
 
-        <li  th:each="songs : ${songs}">
+        <li  th:each="song : ${songs}">
             <a th:href="@{|/songs/${songs.getId()}|}">[[${songs.getTitle()}]]</a>
         </li>
     </ul>
