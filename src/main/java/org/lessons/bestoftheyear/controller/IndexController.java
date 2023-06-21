@@ -1,5 +1,7 @@
-package org.lessons.bestoftheyear;
+package org.lessons.bestoftheyear.controller;
 
+import org.lessons.bestoftheyear.model.Movie;
+import org.lessons.bestoftheyear.model.Song;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,24 +26,16 @@ public class IndexController {
     @GetMapping("/movies")
     public String movies(Model model) {
         List<Movie> movieList = getBestMovie();
-        String attributeMovie = "";
-        for (Movie movie:movieList) {
-            attributeMovie += "id del film " + movie.getId() + ", " + "nome del film: " + movie.getTitle() + "||||| ";
-        }
 
-        model.addAttribute("movies",attributeMovie);
+        model.addAttribute("movies",movieList);
         return "movies";
     }
 
     @GetMapping("/songs")
     public String songs(Model model) {
         List<Song> songsList = getBestSongs();
-        String attributeSongs = "";
-        for (Song songs:songsList) {
-            attributeSongs += "id del film " + songs.getId() + ", " + "nome del film: " + songs.getTitle() + "||||| ";
-        }
 
-        model.addAttribute("songs",attributeSongs);
+        model.addAttribute("songs",songsList);
         return "songs";
     }
 

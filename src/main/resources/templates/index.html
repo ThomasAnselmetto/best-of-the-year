@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" >
+
 <head>
-    <meta charset="UTF-8">
+    <th:block th:fragment="head-properties">
+        <meta charset="UTF-8">
+        <!--    BOOTSTRAP-->
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.0/css/bootstrap.min.css}">
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        <script defer th:src="@{/webjars/bootstrap/5.3.0/js/bootstrap.bundle.min.css}"></script>
+    </th:block>
     <title>Best of the year</title>
-<!--    BOOTSTRAP-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
+
 <body>
 
 <nav class="navbar bg-body-tertiary" th:fragment="navbar">
+
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
+        <a class="navbar-brand text-danger" href="#">
+            BEST OF THE YEAR...
         </a>
     </div>
 </nav>

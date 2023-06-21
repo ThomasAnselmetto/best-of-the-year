@@ -1,4 +1,4 @@
-package org.lessons.bestoftheyear;
+package org.lessons.bestoftheyear.model;
 
 public class Movie {
     //Attributi
